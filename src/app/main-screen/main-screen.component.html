@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="left-bar">
+    <!--   -->
+    <table>
+      <!-- table header for products -->
+      <tr style="text-align: center;">
+        <td style="width: 40%;">Products</td>
+        <td style="width: 10%;">Price</td>
+        <td style="width: 10%;">Quantity</td>
+        <td style="width: 30%;">Total</td>
+      </tr>
+    </table>
+
+  </div>
+  <div class="right-bar">
+    <div class="row">
+      <div *ngFor="let product of data; let i = index" class="product" [ngClass]="{six:multipleSix(i+1)}">
+        <div class="image">
+          <img class="image" src="assets/images/{{product.image}}" alt="">
+        </div>
+        <div class="description">{{product.name.toUpperCase()}}</div>
+        <div class="overlay">
+          <div>{{product.description}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
