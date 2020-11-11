@@ -21,8 +21,8 @@
       <div class="selected-products" *ngIf="productList.size>0">
         <table>
           <tr *ngFor="let product of productList| keyvalue">
-            <td style="width: 5%;"></td>
-            <td style="width: 35;">{{product.key.name}}</td>
+            <td style="width: 10%;"></td>
+            <td style="width: 30;">{{product.key.name}}</td>
             <td style="width: 10%;">{{product.key.price}}</td>
             <td style="width: 10%;"> <span (click)="deleteProduct(product.key)">-</span> {{product.value}} <span
                 (click)="addProduct(product.key)">+</span></td>
@@ -37,7 +37,7 @@
         <tr style="width: 100%;">
           <td style="width: 40%;">SubTotal</td>
           <td style="width: 60%; background-color: white;">
-            <span style="text-align: left;">{{subTotal}} EUR</span><span style="text-align: right;">{{items}}
+            <span>{{subTotal}} EUR</span><span>{{items}}
               Items</span>
           </td>
         </tr>
@@ -45,7 +45,7 @@
         <tr style="width: 100%;">
           <td style="width: 40%;">VAT tax</td>
           <td style="width: 60%; background-color: white;">
-            <span style="text-align: left;">{{vatPercentage}}%</span><span style="text-align: right;">{{vat}}
+            <span>{{vatPercentage}}%</span><span>{{vat}}
               EUR</span>
           </td>
         </tr>
@@ -53,8 +53,8 @@
         <tr style="width: 100%;">
           <td style="width: 40%;">Discount</td>
           <td style="width: 60%; background-color: white;">
-            <span style="text-align: left;">{{discountPercentage}}%</span><span style="text-align: right;">{{discount}}
-              EUR</span>
+            {{discountPercentage}}% {{discount}}
+            EUR
           </td>
         </tr>
 
@@ -78,9 +78,6 @@
           <img class="image" src="assets/images/{{product.image}}" alt="">
         </div>
         <div class="description">{{product.name.toUpperCase()}}</div>
-        <!-- <div class="overlay">
-          <p>{{product.description}}</p>
-        </div> -->
       </div>
     </div>
   </div>
