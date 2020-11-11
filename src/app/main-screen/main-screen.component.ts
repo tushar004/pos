@@ -100,6 +100,7 @@ export class MainScreenComponent implements OnInit, OnDestroy {
   cancelSale(): void {
     this.productList.clear();
     this.calculation();
+    this.items = 0;
   }
 
 }
