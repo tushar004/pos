@@ -11,17 +11,144 @@
       </tr>
     </table>
 
+    <div class="product-list-container">
+      <div class="selected-products-0" *ngIf="productList.size==0">
+        <span>
+          THERE ARE NO PRODUCTS
+        </span>
+      </div>
+
+      <div class="selected-products" *ngIf="productList.size>0">
+        <table>
+          <tr *ngFor="let product of productList| keyvalue">
+            <td style="width: 5%;"></td>
+            <td style="width: 35;">{{product.key.name}}</td>
+            <td style="width: 10%;">{{product.key.price}}</td>
+            <td style="width: 10%;"> <span (click)="deleteProduct(product.key)">-</span> {{product.value}} <span
+                (click)="addProduct(product.key)">+</span></td>
+            <td style="width: 30%;">{{product.key.price * product.value}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="sub-total">
+      <table>
+        <tr style="width: 100%;">
+          <td style="width: 40%;">SubTotal</td>
+          <td style="width: 60%; background-color: white;">
+            <span style="text-align: left;">{{subTotal}} EUR</span><span style="text-align: right;">{{items}}
+              Items</span>
+          </td>
+        </tr>
+
+        <tr style="width: 100%;">
+          <td style="width: 40%;">VAT tax</td>
+          <td style="width: 60%; background-color: white;">
+            <span style="text-align: left;">{{vatPercentage}}%</span><span style="text-align: right;">{{vat}}
+              EUR</span>
+          </td>
+        </tr>
+
+        <tr style="width: 100%;">
+          <td style="width: 40%;">Discount</td>
+          <td style="width: 60%; background-color: white;">
+            <span style="text-align: left;">{{discountPercentage}}%</span><span style="text-align: right;">{{discount}}
+              EUR</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="width: 40%;">Total</td>
+          <td style="width: 60%; background-color: white;"><span style="color: green;">{{total}}</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="row">
+      <div class="footer-button" style="background-color: red ;" (click)="cancelSale()">CANCEL SALE</div>
+      <div class="footer-button" style="background-color: green;" (click)="process()">PROCESS SALE</div>
+    </div>
+
   </div>
   <div class="right-bar">
     <div class="row">
       <div *ngFor="let product of data; let i = index" class="product" [ngClass]="{six:multipleSix(i+1)}">
-        <div class="image">
+        <div class="image" (click)="addProduct(product)">
           <img class="image" src="assets/images/{{product.image}}" alt="">
         </div>
         <div class="description">{{product.name.toUpperCase()}}</div>
-        <div class="overlay">
-          <div>{{product.description}}</div>
-        </div>
+        <!-- <div class="overlay">
+          <p>{{product.description}}</p>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span>Reciept</span>
+    </div>
+    <div class="modal-body">
+      <div style="text-align: center;">
+        <span>
+          Sale No..:.:{{saleNo}}
+        </span>
+      </div>
+      <span>Date: {{date|date}}</span>
+      <div>
+        <table>
+          <tr>
+            <td style="width: 10%;">#</td>
+            <td style="width: 40%;">Products</td>
+            <td style="width: 30%;">Quantity</td>
+            <td style="width: 20%;">SubTotal</td>
+
+          </tr>
+          <div style="width: 100%;">
+            <hr>
+          </div>
+          <tr *ngFor="let product of productList|keyvalue;let i = index">
+            <td style="width: 10%;">{{i+1}}</td>
+            <td style="width: 40%;">{{product.key.name}}</td>
+            <td style="width: 30%;">{{product.value}}</td>
+            <td style="width: 20%;">{{product.key.price * product.value}}<br>
+              <div style="text-align: right;">INR</div>
+            </td>
+          </tr>
+          <div style="width: 100%;">
+            <hr>
+          </div>
+          <tr>
+            <td style="width: 30%">Total Items</td>
+            <td style="width: 20%">{{items}}</td>
+            <td style="width: 20%;">Total </td>
+            <td style="width: 30%">{{total}}INR</td>
+          </tr>
+          <div style="width: 100%;">
+            <hr>
+          </div>
+          <tr>
+            <td style="width: 50%;"></td>
+            <td style="width: 25%;">Discount</td>
+            <td style="width: 25%;">{{discountPercentage}}%</td>
+          </tr>
+          <div style="width: 100%;">
+            <hr>
+          </div>
+          <tr>
+            <td style="width: 40%;"></td>
+            <td style="width: 30%;">VAT</td>
+            <td style="width: 30%;">{{vatPercentage}}%</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="modal-footer" (click)="closeModal()">
+      <hr>
+      <div class="close"> Close
       </div>
     </div>
   </div>

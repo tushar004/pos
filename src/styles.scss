@@ -1,90 +1,169 @@
 /* You can add global styles to this file, and also import other style files */
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .left-bar {
-    flex: 34%;
-    background-color: #ecf0f1;
-    border-radius: 2px;
-    padding: 10px;
-    overflow-y: scroll;
+  flex: 34%;
+  background-color: #ecf0f1;
+  border-radius: 2px;
+  padding: 10px;
 }
 
 .right-bar {
-    flex: 60%;
-    background-color: #ecf0f1;
-    margin-left: 5px;
-    border-radius: 2px;
-    padding: 15px;
-    overflow-y: scroll;
-    height: 90%;
-    height: 35em;
-
+  flex: 60%;
+  background-color: #ecf0f1;
+  margin-left: 5px;
+  border-radius: 2px;
+  padding: 15px;
+  overflow-y: scroll;
+  height: 90%;
+  height: 35em;
 }
 
 .btn-succ {
-    color: #2ccc71;
+  color: #2ccc71;
 }
 
 .btn-cancel {
-    color: #e74c3c;
+  color: #e74c3c;
 }
 
 .product {
-    // flex: 10%;
-    // margin-right: 5%;
-    border-radius: 5px;
-    background-color: #2ccc71;
-    width: 80px;
-    height: 90px;
-    margin-top: 15px;
-    margin-right: 50px;
+  // flex: 10%;
+  // margin-right: 5%;
+  border-radius: 5px;
+  background-color: #2ccc71;
+  width: 80px;
+  height: 90px;
+  margin-top: 15px;
+  margin-right: 50px;
 }
 
 .image {
-    width: inherit;
-    height: inherit;
-    border-radius: 5px;
-
+  width: inherit;
+  height: inherit;
+  border-radius: 5px;
 }
 
 .six {
-    margin-right: 25px !important;
+  margin-right: 25px !important;
 }
 
 .description {
-    position: relative;
-    bottom: 85px;
-    text-align: center;
-    font-size: 10px;
-    word-wrap: break-word;
-    color: white;
-}
-
-.overlay {
   position: relative;
-  // top: 0;
-  bottom: 101px;
-  // left: 0;
-  // right: 0;
-  // height: 100%;
-  // width: 100%;
-  width: 80px;
-  height: 90px;
-  opacity: 0;
-  border-radius: 5px;
-  transition: .5s ease;
-  background-color: #2ccc71;
+  bottom: 85px;
+  text-align: center;
+  font-size: 10px;
+  word-wrap: break-word;
+  color: white;
 }
 
-.product:hover .overlay {
-  opacity: 1;
-}
+// .overlay {
+//   position: absolute;
+//   // top: 0;
+//   // bottom: 101px;
+//   // left: 0;
+//   // right: 0;
+//   // height: 100%;
+//   // width: 100%;
+//   width: inherit;
+//   height: inherit;
+//   opacity: 0;
+//   border-radius: 5px;
+//   // transition: .5s ease;
+//   background-color: #2ccc71;
+// }
 
-// .product:hover .overlay .description{
+// .product:hover .overlay {
 //   opacity: 1;
 // }
+
+.selected-products-0 {
+  background-color: white;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.selected-products {
+  background-color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 10px;
+}
+
+.product-list-container {
+  height: 20em;
+  overflow-y: scroll;
+}
+
+.sub-total {
+  margin-top: 20px;
+}
+
+.footer-button {
+  flex: 40%;
+  margin: 5px;
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  width: 16em;
+  position: fixed;
+  left: 455px;
+  top: 15px;
+  height: 340px;
+}
+
+.modal-header {
+  background-color: navy;
+  color: white;
+  padding: 10px;
+}
+
+.modal-body {
+  margin: 10px;
+  font-size: 10px;
+}
+
+.modal-footer {
+  text-align: center;
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.close {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid grey;
+}
