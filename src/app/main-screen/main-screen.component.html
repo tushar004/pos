@@ -75,7 +75,8 @@
     <div class="row">
       <div *ngFor="let product of data; let i = index" class="product" [ngClass]="{six:multipleSix(i+1)}">
         <div class="overlay" (click)="addProduct(product)">
-          <p style="padding: 5px; text-align: center;">{{product.description}}</p>
+          <p class="price">{{product.price}} EUR</p>
+          <p class="des">{{product.description}}</p>
         </div>
         <div class="image" >
           <img class="image" src="assets/images/{{product.image}}" alt="">
