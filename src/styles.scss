@@ -33,8 +33,6 @@
 }
 
 .product {
-  // flex: 10%;
-  // margin-right: 5%;
   border-radius: 5px;
   background-color: #2ccc71;
   width: 80px;
@@ -154,4 +152,19 @@
 
 table{
   width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  opacity: 0;
+  border-radius: 5px;
+  background-color: #2ccc71;
+  font-size: 12px;
+  color: white;
+}
+
+.product:hover .overlay {
+  opacity: 1;
 }

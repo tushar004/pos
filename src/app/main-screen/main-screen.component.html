@@ -74,7 +74,10 @@
   <div class="right-bar">
     <div class="row">
       <div *ngFor="let product of data; let i = index" class="product" [ngClass]="{six:multipleSix(i+1)}">
-        <div class="image" (click)="addProduct(product)">
+        <div class="overlay" (click)="addProduct(product)">
+          <p style="padding: 5px; text-align: center;">{{product.description}}</p>
+        </div>
+        <div class="image" >
           <img class="image" src="assets/images/{{product.image}}" alt="">
         </div>
         <div class="description">{{product.name.toUpperCase()}}</div>
