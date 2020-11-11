@@ -55,11 +55,11 @@ fdescribe('MainScreenComponent', () => {
     beforeEach(() => {
       spyOn(component, 'calculation');
       const p = {
-        'name': 'comuter',
-        'price': '130',
-        'category': 'computers',
-        'description': '',
-        'image': 'comuter.jpg'
+        name: 'comuter',
+        price: '130',
+        category: 'computers',
+        description: '',
+        image: 'comuter.jpg'
       };
       component.addProduct(p);
       component.deleteProduct(p);
@@ -89,11 +89,11 @@ fdescribe('MainScreenComponent', () => {
     });
     it('check the size and no duplicate element', () => {
       const p = {
-        'name': 'comuter',
-        'price': '130',
-        'category': 'computers',
-        'description': '',
-        'image': 'comuter.jpg'
+        name: 'comuter',
+        price: '130',
+        category: 'computers',
+        description: '',
+        image: 'comuter.jpg'
       };
       component.addProduct(p);
       component.addProduct(p);
@@ -101,11 +101,11 @@ fdescribe('MainScreenComponent', () => {
     });
     it('check the element present', () => {
       const p = {
-        'name': 'comuter',
-        'price': '130',
-        'category': 'computers',
-        'description': '',
-        'image': 'comuter.jpg'
+        name: 'comuter',
+        price: '130',
+        category: 'computers',
+        description: '',
+        image: 'comuter.jpg'
       };
       component.addProduct(p);
       component.addProduct(p);
@@ -113,11 +113,11 @@ fdescribe('MainScreenComponent', () => {
     });
     it('check the element freq', () => {
       const p = {
-        'name': 'comuter',
-        'price': '130',
-        'category': 'computers',
-        'description': '',
-        'image': 'comuter.jpg'
+        name: 'comuter',
+        price: '130',
+        category: 'computers',
+        description: '',
+        image: 'comuter.jpg'
       };
       component.addProduct(p);
       component.addProduct(p);
@@ -132,11 +132,11 @@ fdescribe('MainScreenComponent', () => {
     });
     it('check if freq change after delete', () => {
       const p = {
-        'name': 'comuter',
-        'price': '130',
-        'category': 'computers',
-        'description': '',
-        'image': 'comuter.jpg'
+        name: 'comuter',
+        price: '130',
+        category: 'computers',
+        description: '',
+        image: 'comuter.jpg'
       };
       component.addProduct(p);
       component.addProduct(p);
@@ -145,11 +145,11 @@ fdescribe('MainScreenComponent', () => {
     });
     it('check the element present after delete all', () => {
       const p = {
-        'name': 'comuter',
-        'price': '130',
-        'category': 'computers',
-        'description': '',
-        'image': 'comuter.jpg'
+        name: 'comuter',
+        price: '130',
+        category: 'computers',
+        description: '',
+        image: 'comuter.jpg'
       };
       component.addProduct(p);
       component.addProduct(p);
@@ -160,11 +160,11 @@ fdescribe('MainScreenComponent', () => {
     });
     it('check the element present after delete all', () => {
       const p = {
-        'name': 'comuter',
-        'price': '130',
-        'category': 'computers',
-        'description': '',
-        'image': 'comuter.jpg'
+        name: 'comuter',
+        price: '130',
+        category: 'computers',
+        description: '',
+        image: 'comuter.jpg'
       };
       component.addProduct(p);
       component.addProduct(p);
