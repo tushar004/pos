@@ -1,7 +1,7 @@
 <div class="row">
   <div class="left-bar">
     <!--   -->
-    <table>
+    <table style="width: 100%;">
       <!-- table header for products -->
       <tr style="text-align: center;">
         <td style="width: 40%;">Products</td>
@@ -19,10 +19,10 @@
       </div>
 
       <div class="selected-products" *ngIf="productList.size>0">
-        <table>
+        <table style="width: 100%;">
           <tr *ngFor="let product of productList| keyvalue">
-            <td style="width: 10%;"></td>
-            <td style="width: 30;">{{product.key.name}}</td>
+            <td style="width: 5%;"></td>
+            <td style="width: 35%;">{{product.key.name}}</td>
             <td style="width: 10%;">{{product.key.price}}</td>
             <td style="width: 10%;"> <span (click)="deleteProduct(product.key)">-</span> {{product.value}} <span
                 (click)="addProduct(product.key)">+</span></td>
@@ -33,7 +33,7 @@
     </div>
 
     <div class="sub-total">
-      <table>
+      <table style="width: 100%;">
         <tr style="width: 100%;">
           <td style="width: 40%;">SubTotal</td>
           <td style="width: 60%; background-color: white;">
@@ -42,7 +42,7 @@
           </td>
         </tr>
 
-        <tr style="width: 100%;">
+        <tr>
           <td style="width: 40%;">VAT tax</td>
           <td style="width: 60%; background-color: white;">
             <span>{{vatPercentage}}%</span><span>{{vat}}
@@ -50,7 +50,7 @@
           </td>
         </tr>
 
-        <tr style="width: 100%;">
+        <tr>
           <td style="width: 40%;">Discount</td>
           <td style="width: 60%; background-color: white;">
             {{discountPercentage}}% {{discount}}
@@ -96,45 +96,35 @@
       </div>
       <span>Date: {{date|date}}</span>
       <div>
-        <table>
+        <table style="width: 100%;">
           <tr>
             <td style="width: 10%;">#</td>
             <td style="width: 40%;">Products</td>
             <td style="width: 30%;">Quantity</td>
             <td style="width: 20%;">SubTotal</td>
-
           </tr>
-          <div style="width: 100%;">
-            <hr>
-          </div>
+           <tr> <hr> </tr>
           <tr *ngFor="let product of productList|keyvalue;let i = index">
             <td style="width: 10%;">{{i+1}}</td>
             <td style="width: 40%;">{{product.key.name}}</td>
             <td style="width: 30%;">{{product.value}}</td>
-            <td style="width: 20%;">{{product.key.price * product.value}}<br>
-              <div style="text-align: right;">INR</div>
+            <td style="width: 20%;">{{product.key.price * product.value}}INR
             </td>
           </tr>
-          <div style="width: 100%;">
             <hr>
-          </div>
           <tr>
             <td style="width: 30%">Total Items</td>
             <td style="width: 20%">{{items}}</td>
             <td style="width: 20%;">Total </td>
             <td style="width: 30%">{{total}}INR</td>
           </tr>
-          <div style="width: 100%;">
             <hr>
-          </div>
           <tr>
             <td style="width: 50%;"></td>
             <td style="width: 25%;">Discount</td>
             <td style="width: 25%;">{{discountPercentage}}%</td>
           </tr>
-          <div style="width: 100%;">
             <hr>
-          </div>
           <tr>
             <td style="width: 40%;"></td>
             <td style="width: 30%;">VAT</td>
