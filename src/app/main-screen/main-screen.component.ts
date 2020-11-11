@@ -20,7 +20,7 @@ export class MainScreenComponent implements OnInit, OnDestroy {
   vatPercentage = 10;
   discountPercentage = 10;
   modal;
-  saleNo = 1;
+  saleNo = 0;
   date: Date;
 
   constructor(private readonly dataService: DataService) { }
