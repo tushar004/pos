@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from './services/data-service.service';
 import { IProduct } from '../core/product';
 
@@ -34,9 +34,11 @@ export class MainScreenComponent implements OnInit, OnDestroy {
   }
 
   process(): void {
-    this.modal.style.display = 'block';
-    this.saleNo += 1;
-    this.date = new Date(Date.now());
+    if (this.productList.size > 0) {
+      this.modal.style.display = 'block';
+      this.saleNo += 1;
+      this.date = new Date(Date.now());
+    }
   }
 
   closeModal(): void {
