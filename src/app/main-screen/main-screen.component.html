@@ -21,11 +21,14 @@
       <div class="selected-products" *ngIf="productList.size>0">
         <table>
           <tr *ngFor="let product of productList| keyvalue">
-            <td style="width: 5%;"></td>
+            <td style="width: 5%;"><img style="width: 16px;height: 16px;" src="assets/icons/remove (1).svg" alt=""
+                (click)="deleteProduct(product.key)"> </td>
             <td style="width: 35%;">{{product.key.name}}</td>
             <td style="width: 10%;">{{product.key.price}}</td>
-            <td style="width: 10%;"> <span (click)="deleteProduct(product.key)">-</span> {{product.value}} <span
-                (click)="addProduct(product.key)">+</span></td>
+            <td style="width: 10%;"> <span (click)="deleteProduct(product.key)"> <img style="width: 10px;height: 10px;"
+                  src="assets/icons/remove.svg" alt=""> </span> {{product.value}} <span
+                (click)="addProduct(product.key)"><img style="width: 10px;height: 10px;" src="assets/icons/plus.svg"
+                  alt=""></span></td>
             <td style="width: 30%;">{{product.key.price * product.value}}</td>
           </tr>
         </table>
@@ -74,11 +77,11 @@
   <div class="right-bar">
     <div class="row">
       <div *ngFor="let product of data; let i = index" class="product" [ngClass]="{six:multipleSix(i+1)}">
-        <div class="overlay" (click)="addProduct(product)">
+        <div class="overlay">
           <p class="price">{{product.price}} EUR</p>
           <p class="des">{{product.description}}</p>
         </div>
-        <div class="image" >
+        <div class="image" (click)="addProduct(product)">
           <img class="image" src="assets/images/{{product.image}}" alt="">
         </div>
         <div class="description">{{product.name.toUpperCase()}}</div>
