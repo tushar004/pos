@@ -1,4 +1,5 @@
 <div class="row">
+  <!-- left column start -->
   <div class="left-bar">
     <!--   -->
     <table>
@@ -10,7 +11,7 @@
         <td style="width: 30%;">Total</td>
       </tr>
     </table>
-
+    <!-- product list start -->
     <div class="product-list-container">
       <div class="selected-products-0" *ngIf="productList.size==0">
         <span>
@@ -34,7 +35,8 @@
         </table>
       </div>
     </div>
-
+    <!-- prdouct list end -->
+    <!-- subtotal start -->
     <div class="sub-total">
       <table style="border: 1px solid #e9e9e9;border-collapse: collapse;">
         <tr style="border: 1px solid #e9e9e9;">
@@ -67,12 +69,14 @@
         </tr>
       </table>
     </div>
+    <!-- subtotal end -->
 
     <div class="row">
       <div class="footer-button" style="background-color: #e74c3c ;" (click)="cancelSale()">CANCEL SALE</div>
       <div class="footer-button" style="background-color: #2ccc71;" (click)="process()">PROCESS SALE</div>
     </div>
-
+    <!-- left column end -->
+    <!-- right colummn start -->
   </div>
   <div class="right-bar">
     <div class="row">
@@ -89,7 +93,9 @@
     </div>
   </div>
 </div>
+<!-- right column end -->
 
+<!-- popup/ modal start -->
 <div id="myModal" class="modal">
   <div class="modal-content">
     <div class="modal-header">
@@ -145,3 +151,4 @@
     </div>
   </div>
 </div>
+<!-- popup/ modal start -->
