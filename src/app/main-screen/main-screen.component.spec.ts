@@ -4,7 +4,7 @@ import { MainScreenComponent } from './main-screen.component';
 import { DataService } from './services/data-service.service';
 import { HttpClientModule } from '@angular/common/http';
 
-fdescribe('MainScreenComponent', () => {
+describe('MainScreenComponent', () => {
   let component: MainScreenComponent;
   let fixture: ComponentFixture<MainScreenComponent>;
 
