@@ -20,12 +20,20 @@ import { createCustomElement } from '@angular/elements';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AppComponent]
 })
 export class AppModule {
-  constructor(private injector: Injector) {
-    const el = createCustomElement(MainScreenComponent, { injector });
-    customElements.define('pos', el);
-}
-ngDoBootstrap() {}
+  constructor(private readonly injector: Injector) { }
+  ngDoBootstrap() {
+    const elements: any[] = [[AppComponent, 'pos']];
+
+    for (const [component, name] of elements) {
+      const el = createCustomElement(component, { injector: this.injector });
+      if (!customElements.get(name)) {
+        customElements.define(name, el);
+      }
+    }
+
+  }
 }

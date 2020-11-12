@@ -1,0 +1,183 @@
+/* You can add global styles to this file, and also import other style files */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.left-bar {
+  flex: 34%;
+  background-color: #ecf0f1;
+  border-radius: 2px;
+  padding: 10px;
+}
+
+.right-bar {
+  flex: 60%;
+  background-color: #ecf0f1;
+  margin-left: 5px;
+  border-radius: 2px;
+  padding: 15px;
+  overflow-y: scroll;
+  height: 90%;
+  height: 35em;
+}
+
+.btn-succ {
+  color: #2ccc71;
+}
+
+.btn-cancel {
+  color: #e74c3c;
+}
+
+.product {
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 80px;
+  height: 90px;
+  margin-top: 15px;
+  margin-right: 50px;
+}
+
+.image {
+  width: inherit;
+  height: inherit;
+  border-radius: 5px;
+  opacity: 0.4;
+  background-color: grey;
+}
+
+.six {
+  margin-right: 25px !important;
+}
+
+.description {
+  position: relative;
+  bottom: 85px;
+  text-align: center;
+  font-size: 10px;
+  word-wrap: break-word;
+  color: white;
+}
+
+
+
+.selected-products-0 {
+  background-color: white;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.selected-products {
+  background-color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.product-list-container {
+  height: 20em;
+  overflow-y: scroll;
+}
+
+.sub-total {
+  margin-top: 20px;
+}
+
+.footer-button {
+  flex: 40%;
+  margin: 5px;
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  width: 16em;
+  position: fixed;
+  left: 455px;
+  top: 15px;
+  height: 340px;
+}
+
+.modal-header {
+  background-color: #1a293b;
+  color: white;
+  padding: 10px;
+}
+
+.modal-body {
+  margin: 10px;
+  font-size: 10px;
+}
+
+.modal-footer {
+  text-align: center;
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.close {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid grey;
+}
+
+table{
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  opacity: 0;
+  border-radius: 5px;
+  background-color: plum;
+  color: white;
+}
+
+.overlay .des{
+  font-size: 10px;
+  padding: 5px; text-align: center;
+}
+
+.overlay .price{
+  font-size: 12px;
+  position: relative;
+  top: 15px;
+  text-align: center;
+}
+
+.product:hover .overlay {
+  opacity: 1;
+}
